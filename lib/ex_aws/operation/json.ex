@@ -43,7 +43,7 @@ defimpl ExAws.Operation, for: ExAws.Operation.JSON do
     url = ExAws.Request.Url.build(operation, config)
 
     headers = [
-      {"x-amz-content-sha256", ""} | operation.headers
+      {"x-amz-content-sha256", "UNSIGNED-PAYLOAD"} | operation.headers
     ]
 
     ExAws.Request.request(
